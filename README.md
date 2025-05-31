@@ -35,14 +35,7 @@ It has been used in multiple **cyber-espionage campaigns** targeting:
 - 🛡️ Uses `CreateToolhelp32Snapshot()` to enumerate processes  
 - 🧩 Designed to avoid sandbox/debuggers (`GetTickCount`, mutex checks)
 
-```c
-pcVar2 = getenv(pcVar2);
-if (pcVar2 == "0x1") {
-    // Evade or terminate
-}
-```
 
----
 
 ### 3.2 Resource Loading & Decryption
 
@@ -107,7 +100,7 @@ if (pcVar2 == "0x1") {
 
 ## 🎥 7. Lab Execution Video
 
-📺 [Watch Ghost RAT Lab Execution](https://drive.google.com/file/d/1w2KuczLkKZIVF_t1WKmg0caVo24IfAeN/view?usp=drive_link)
+📺 👉 [Watch Ghost RAT Lab Execution](https://drive.google.com/file/d/1w2KuczLkKZIVF_t1WKmg0caVo24IfAeN/view?usp=drive_link)
 
 ---
 
