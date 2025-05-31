@@ -1,4 +1,4 @@
-#  DLL & API Function Analysis – Ghost RAT 👻
+# 🧬 DLL & API Function Analysis – Ghost RAT 👻
 
 ---
 
