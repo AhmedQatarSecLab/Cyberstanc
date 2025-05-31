@@ -1,4 +1,4 @@
-# 👻 Ghost RAT Malware Analysis Report 💀
+# 👻 Ghost RAT Malware Analysis Report 🌏
 
 **Tool Used**: Vortex (Powered by Cyberstanc)  
 **Environment**: VMware + Wireshark  
