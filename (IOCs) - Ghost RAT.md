@@ -1,43 +1,54 @@
-# 🚨 Indicators of Compromise (IOCs) - Ghost RAT
+# 👻 Indicators of Compromise (IOCs) – Ghost RAT 🌏
 
 ---
 
-## 🧠 Overview
+## 🔍 Overview
 
-This document outlines behavior-based Indicators of Compromise (IOCs) extracted during the analysis of Ghost RAT using **Vortex (powered by Cyberstanc)**.  
-These IOCs highlight the malware’s core capabilities: persistence, injection, evasion, and system manipulation.
+This document outlines behavior-based **Indicators of Compromise (IOCs)** extracted from Ghost RAT during dynamic analysis with **Vortex (powered by Cyberstanc)**.  
+These artifacts expose the malware’s internal functionality — including **execution flow**, **persistence mechanisms**, **anti-analysis behavior**, and **system-level manipulation**.
 
 ---
 
-## 🧾 Key IOCs Identified
+## 📌 Core IOC Categories
 
-| **IOC**                         | **Namespace**                                      | **Description**                               |
+| **IOC**                         | **Namespace**                                      | **Functionality / Behavior**                  |
 |----------------------------------|----------------------------------------------------|-----------------------------------------------|
-| copy file                        | host-interaction/file-system/copy                  | Copies payload or additional components       |
-| move file                        | host-interaction/file-system/move                  | Moves executable to stealth locations         |
-| inject dll / inject thread      | host-interaction/process/inject                    | Code injection into other processes           |
-| create mutex                    | host-interaction/mutex                             | Used to prevent duplicate execution           |
-| create service / start service | host-interaction/service/create, /start            | Establishes persistence on startup            |
-| modify service                  | host-interaction/service/modify                    | Alters existing services for stealth          |
-| create process (suspended)      | host-interaction/process/create                    | Spawns new process in suspended state         |
-| acquire debug privileges        | host-interaction/process/modify                    | Used for evasion or advanced control          |
-| terminate process               | host-interaction/process/terminate                 | Kills unwanted or security processes          |
-| check OS version                | host-interaction/os/version                        | Determines host environment type              |
-| accept command line arguments   | host-interaction/cli                               | Enables runtime control via arguments         |
-| reference Base64 string         | data-manipulation/encoding/base64                  | Signs of obfuscated or encoded data           |
-| reference anti-VM strings       | anti-analysis/anti-vm/vm-detection                 | Detects virtualized analysis environments     |
-| check for delay via GetTickCount| anti-analysis/anti-debugging/debugger-detection    | Timing-based anti-debugging                   |
-| extract resource via kernel32   | executable/resource                                | Payload unpacking during execution            |
-| contain embedded PE / .rsrc     | executable/subfile/pe / pe/section/rsrc            | Drops or unpacks hidden PE files              |
-| query registry / modify registry| host-interaction/registry                          | Reads or alters registry keys                 |
-| create directory                | host-interaction/file-system/create                | Creates folders for dropped components        |
-| delete file                     | host-interaction/file-system/delete                | Removes evidence or logs                      |
+| `copy file`                      | host-interaction/file-system/copy                  | Copies payload or artifacts to hidden paths   |
+| `move file`                      | host-interaction/file-system/move                  | File relocation to evade detection            |
+| `inject dll / inject thread`    | host-interaction/process/inject                    | Memory injection into target processes        |
+| `create mutex`                  | host-interaction/mutex                             | Prevents redundant execution; stealth tactic  |
+| `create service / start service`| host-interaction/service/create, /start            | Persistence through system services           |
+| `modify service`                | host-interaction/service/modify                    | Hijacks or updates existing services          |
+| `create process (suspended)`    | host-interaction/process/create                    | Creates suspended processes for stealth       |
+| `acquire debug privileges`      | host-interaction/process/modify                    | Enables advanced access for tampering         |
+| `terminate process`             | host-interaction/process/terminate                 | Disables security or unwanted processes       |
+| `check OS version`              | host-interaction/os/version                        | Determines host system to tailor behavior     |
+| `accept command line arguments` | host-interaction/cli                               | Supports dynamic runtime instructions         |
+| `reference Base64 string`       | data-manipulation/encoding/base64                  | Used for obfuscating strings/data             |
+| `reference anti-VM strings`     | anti-analysis/anti-vm/vm-detection                 | Detects VMs, sandboxes, or forensic tools     |
+| `GetTickCount` / delay check    | anti-analysis/anti-debugging/debugger-detection    | Timing-based anti-debugging defense           |
+| `kernel32 resource unpacking`   | executable/resource                                | Extracts payload dynamically at runtime       |
+| `embedded PE in .rsrc`          | executable/subfile/pe / pe/section/rsrc            | Hidden executables inside resource section    |
+| `query/modify registry`         | host-interaction/registry                          | Alters startup config and gains persistence   |
+| `create directory`              | host-interaction/file-system/create                | Prepares folders for dropped artifacts        |
+| `delete file`                   | host-interaction/file-system/delete                | Cleans up dropped files or traces             |
 
 ---
 
-## 🧠 Summary
+## 🧠 Observational Highlights
 
-These IOCs reflect Ghost RAT’s operational goals: stealthy installation, persistence, host control, and sandbox evasion.  
-They are critical for detection and threat hunting across endpoints and networks.
+- 🎯 Emphasizes stealth through **mutex creation**, **service hijacking**, and **runtime unpacking**
+- 🛡️ Evades detection with **environment checks** and **anti-debug delay loops**
+- 🧬 Maintains control using **thread injection**, **command-line argument parsing**, and **registry edits**
+
+---
+
+## 🎯 Threat Analyst Notes
+
+These IOCs are highly valuable for **endpoint detection**, **SOC alert correlation**, and **YARA rule tuning**.  
+When observed together, they strongly signal the presence of **Ghost RAT or APT17-linked malware strains**.
+
+---
 
 **Stay curious. Stay safe. Stay ahead.**
+
