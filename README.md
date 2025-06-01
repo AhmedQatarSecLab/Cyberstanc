@@ -21,9 +21,9 @@ It has been used in multiple **cyber-espionage campaigns** targeting:
 
 ## 2. Execution Environment
 
-- 🔬 **Lab Setup**: Isolated VMware machine 🖥️
-- 📡 **Network Monitor**: Wireshark 🦈
-- 🧪 **Behavioral Analysis**: Vortex 🦚 (powered by Cyberstanc)
+-  **Lab Setup**: Isolated VMware machine 🖥️
+-  **Network Monitor**: Wireshark 🦈
+-  **Behavioral Analysis**: Vortex 🦚 (powered by Cyberstanc)
 
 ---
 
