@@ -15,7 +15,7 @@ It has been used in multiple **cyber-espionage campaigns** targeting:
 - 🏛️ Government agencies  
 - 🛡️ Military infrastructure  
 - ⚙️ Critical systems  
-- 🧠 Political & strategic entities
+- 🏳️ Political & strategic entities
 
 ---
 
@@ -23,7 +23,7 @@ It has been used in multiple **cyber-espionage campaigns** targeting:
 
 - 🔬 **Lab Setup**: Isolated VMware machine  
 - 📡 **Network Monitor**: Wireshark  
-- 🧪 **Behavioral Analysis**: Vortex (powered by Cyberstanc)
+- 🧪 **Behavioral Analysis**: Vortex🦚 (powered by Cyberstanc)
 
 ---
 
